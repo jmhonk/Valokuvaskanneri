@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valokuvaskanneri</title>
+<meta name="description" content="Scan printed photos with your phone camera: automatic edge detection, perspective correction and albums.">
+<link rel="icon" href="icon.png">
+<style>
+  :root { --bg:#ffffff; --fg:#17262a; --muted:#52666b; --card:#f1f9fa; --accent:#006874; --line:#d5e6e9; --btn:#006874; --btnfg:#ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e1517; --fg:#e4f1f3; --muted:#9db4b9; --card:#162327; --accent:#4fd8eb; --line:#26393e; --btn:#4fd8eb; --btnfg:#00363d; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.6; background:var(--bg); color:var(--fg); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: var(--accent); }
+  h1 { font-size: 2.2rem; margin: 0 0 4px; }
+  h2 { margin-top: 2.2em; }
+  h3 { margin-top: 1.6em; }
+  .hero { display:flex; gap:20px; align-items:center; flex-wrap:wrap; margin-bottom: 8px; }
+  .hero img { width: 96px; height: 96px; border-radius: 22px; }
+  .tag { color: var(--muted); font-size: 1.1rem; margin: 0; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding:0; list-style:none; }
+  .grid li { background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+  .badge { display:inline-block; background:var(--btn); color:var(--btnfg); padding: 10px 18px; border-radius: 999px; font-weight:600; text-decoration:none; }
+  .note { color: var(--muted); font-size:.95rem; }
+  nav { margin-bottom: 24px; }
+  footer { margin-top: 3em; padding-top: 16px; border-top:1px solid var(--line); color: var(--muted); font-size:.95rem; }
+</style>
+</head>
+<body>
+<main>
+
+<div class="hero">
+  <img src="icon.png" alt="Valokuvaskanneri app icon">
+  <div>
+    <h1>Valokuvaskanneri</h1>
+    <p class="tag">Skannaa vanhat paperivalokuvat puhelimen kameralla.<br>Scan printed photos with your phone camera.</p>
+  </div>
+</div>
+
+<h2>Suomeksi</h2>
+<p>Valokuvaskanneri muuttaa paperivalokuvat digitaalisiksi kuviksi. Ota kuva valokuvasta, ja sovellus tunnistaa reunat, oikaisee perspektiivin ja siistii kuvan. Kaikki tapahtuu puhelimessasi: sovellus ei lähetä kuviasi minnekään, ei kerää tietoja eikä näytä mainoksia.</p>
+<ul class="grid">
+  <li><strong>Reunantunnistus</strong><br>Automaattinen, ja kulmia voi säätää käsin.</li>
+  <li><strong>Perspektiivin oikaisu</strong><br>Kuva on suorakulmainen, vaikka kuvaisit vinosta.</li>
+  <li><strong>Suodattimet</strong><br>Automaattinen parannus ja valittavat suodattimet.</li>
+  <li><strong>Albumit</strong><br>Järjestä skannatut kuvat albumeihin.</li>
+  <li><strong>Nopea skannaus</strong><br>Ota monta kuvaa peräkkäin, käsittely tapahtuu taustalla.</li>
+  <li><strong>JPEG-vienti</strong><br>Valittava laatu ja jako suoraan galleriaan.</li>
+</ul>
+
+<h2>In English</h2>
+<p>Valokuvaskanneri turns printed photos into digital images. Take a picture of a print and the app detects the edges, corrects the perspective and cleans up the result. Everything happens on your phone: the app does not upload your photos, collect data or show ads. The app interface is currently in Finnish.</p>
+<ul class="grid">
+  <li><strong>Edge detection</strong><br>Automatic, with manual corner adjustment.</li>
+  <li><strong>Perspective correction</strong><br>Photos come out rectangular even when shot at an angle.</li>
+  <li><strong>Filters</strong><br>Automatic enhancement and selectable filters.</li>
+  <li><strong>Albums</strong><br>Organise scanned photos into albums.</li>
+  <li><strong>Fast batch scanning</strong><br>Shoot many photos in a row; processing happens in the background.</li>
+  <li><strong>JPEG export</strong><br>Adjustable quality and sharing straight to the gallery.</li>
+</ul>
+
+<p style="margin-top:2em"><span class="badge">Google Play – coming soon / tulossa</span></p>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a> · Contact: <a href="mailto:jmhonkanen@outlook.com">jmhonkanen@outlook.com</a><br>
+  © 2026 Jari-Matti Honkanen
+</footer>
+</main>
+</body>
+</html>
