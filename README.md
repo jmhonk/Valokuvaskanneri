@@ -6,7 +6,7 @@
 
 Scan printed photos with your phone camera. Valokuvaskanneri detects the edges of a photo, corrects the perspective and cleans up the result, so an old print becomes a straight, tidy digital image.
 
-*Skannaa vanhat paperivalokuvat puhelimen kameralla.* (The app interface is currently in Finnish.)
+*Skannaa vanhat paperivalokuvat puhelimen kameralla.* The app is available in Finnish and English.
 
 ## Features
 
@@ -16,6 +16,7 @@ Scan printed photos with your phone camera. Valokuvaskanneri detects the edges o
 - **Albums** – organise scanned photos into albums
 - **Fast batch scanning** – shoot many photos in a row; processing runs in the background
 - **JPEG export** – adjustable quality, share straight to the gallery
+- **Languages** – Finnish and English, selectable in Settings
 - **Theme options** – light/dark theme and selectable accent colour
 
 ## Privacy
