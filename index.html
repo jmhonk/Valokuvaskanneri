@@ -23,6 +23,14 @@
   .grid li { background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
   .badge { display:inline-block; background:var(--btn); color:var(--btnfg); padding: 10px 18px; border-radius: 999px; font-weight:600; text-decoration:none; }
   .note { color: var(--muted); font-size:.95rem; }
+  .start { text-align: center; margin: 36px 0 8px; }
+  .start h2 { color: var(--accent); margin: 0 0 18px; font-size: 1.6rem; }
+  .start-btn { display: block; width: 100%; max-width: 440px; margin: 12px auto 0; padding: 16px 20px;
+               border-radius: 12px; font-weight: 700; font-size: 1.05rem; text-decoration: none; text-align: center; }
+  .start-btn.secondary { background: var(--card); color: var(--fg); border: 1px solid var(--line); }
+  .start-btn.primary { background: var(--btn); color: var(--btnfg); border: 1px solid var(--btn); }
+  .start-btn:hover { filter: brightness(1.12); }
+  .start .note { max-width: 440px; margin: 16px auto 0; }
   nav { margin-bottom: 24px; }
   footer { margin-top: 3em; padding-top: 16px; border-top:1px solid var(--line); color: var(--muted); font-size:.95rem; }
 </style>
@@ -37,6 +45,15 @@
     <p class="tag">Skannaa vanhat paperivalokuvat puhelimen kameralla.<br>Scan printed photos with your phone camera.</p>
   </div>
 </div>
+
+<section class="start">
+  <h2>Aloita käyttö</h2>
+  <!-- 1. Closed beta -ryhmä -->
+  <a class="start-btn secondary" href="https://groups.google.com/g/valokuvaskanneri-closed-beta" target="_blank" rel="noopener">1. Liity beta-testaajaksi</a>
+  <!-- 2. Play Store -linkki -->
+  <a class="start-btn primary" href="https://play.google.com/store/apps/details?id=fi.jmhonkanen.valokuvaskanneri" target="_blank" rel="noopener">2. Lataa Play Storesta</a>
+  <p class="note">Huom: Sovellus näkyy ladattavana vasta beta-jäsenyyden hyväksynnän jälkeen.<br>Saatavilla vain Android-laitteilla.</p>
+</section>
 
 <h2>Suomeksi</h2>
 <p>Valokuvaskanneri muuttaa paperivalokuvat digitaalisiksi kuviksi. Ota kuva valokuvasta, ja sovellus tunnistaa reunat, oikaisee perspektiivin ja siistii kuvan. Kaikki tapahtuu puhelimessasi: sovellus ei lähetä kuviasi minnekään, ei kerää tietoja eikä näytä mainoksia. Sovellus toimii suomeksi ja englanniksi.</p>
@@ -59,8 +76,6 @@
   <li><strong>Fast batch scanning</strong><br>Shoot many photos in a row; processing happens in the background.</li>
   <li><strong>JPEG export</strong><br>Adjustable quality and sharing straight to the gallery.</li>
 </ul>
-
-<p style="margin-top:2em"><span class="badge">Google Play – coming soon / tulossa</span></p>
 
 <footer>
   <a href="privacy.html">Privacy Policy</a> · Contact: <a href="mailto:jmhonkanen@outlook.com">jmhonkanen@outlook.com</a><br>
