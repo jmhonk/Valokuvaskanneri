@@ -21,7 +21,7 @@ Scan printed photos with your phone camera. Valokuvaskanneri detects the edges o
 
 ## Privacy
 
-Everything happens on your device. The app does not upload photos, collect data, show ads or use accounts. Read the full [privacy policy](https://jmhonk.github.io/valokuvaskanneri/privacy.html).
+Everything happens on your device. The app does not upload photos, collect data, show ads or use accounts. Read the full [privacy policy](https://jmhonk.github.io/valokuvaskanneri/PrivacyPolicy.html).
 
 ## Built with
 
