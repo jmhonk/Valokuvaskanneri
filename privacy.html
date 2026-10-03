@@ -1,71 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Valokuvaskanneri – Privacy Policy</title>
-<meta name="description" content="Privacy policy of the Valokuvaskanneri Android app.">
-<link rel="icon" href="icon.png">
-<style>
-  :root { --bg:#ffffff; --fg:#17262a; --muted:#52666b; --card:#f1f9fa; --accent:#006874; --line:#d5e6e9; --btn:#006874; --btnfg:#ffffff; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0e1517; --fg:#e4f1f3; --muted:#9db4b9; --card:#162327; --accent:#4fd8eb; --line:#26393e; --btn:#4fd8eb; --btnfg:#00363d; } }
-  * { box-sizing: border-box; }
-  body { margin:0; font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.6; background:var(--bg); color:var(--fg); }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-  a { color: var(--accent); }
-  h1 { font-size: 2.2rem; margin: 0 0 4px; }
-  h2 { margin-top: 2.2em; }
-  h3 { margin-top: 1.6em; }
-  .hero { display:flex; gap:20px; align-items:center; flex-wrap:wrap; margin-bottom: 8px; }
-  .hero img { width: 96px; height: 96px; border-radius: 22px; }
-  .tag { color: var(--muted); font-size: 1.1rem; margin: 0; }
-  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding:0; list-style:none; }
-  .grid li { background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
-  .badge { display:inline-block; background:var(--btn); color:var(--btnfg); padding: 10px 18px; border-radius: 999px; font-weight:600; text-decoration:none; }
-  .note { color: var(--muted); font-size:.95rem; }
-  nav { margin-bottom: 24px; }
-  footer { margin-top: 3em; padding-top: 16px; border-top:1px solid var(--line); color: var(--muted); font-size:.95rem; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Valokuvaskanneri – Privacy Policy</title>
+  <meta name="description" content="Privacy policy of the Valokuvaskanneri Android app.">
+  <link rel="icon" href="icon.png">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #111827;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    nav {
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 0 0 5px;
+    }
+
+    .meta {
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 25px;
+      color: #4fd8eb;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .highlight {
+      background: #1f2937;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .highlight ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .highlight li {
+      margin-bottom: 8px;
+    }
+
+    .highlight li:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #4fd8eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px 12px;
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<main>
+  <div class="container">
+    <nav><a href="index.html">← Valokuvaskanneri</a></nav>
 
-<nav><a href="index.html">← Valokuvaskanneri</a></nav>
-<h2>Valokuvaskanneri – Privacy Policy</h2>
-<p><em>Updated: 2 October 2026</em></p>
+    <h1>Privacy Policy – Valokuvaskanneri</h1>
+    <div class="meta"><em>Updated: 2 October 2026</em></div>
 
-<h3>Overview</h3>
-<p>Valokuvaskanneri is an Android app for scanning printed photos with the phone camera. The developer is Jari-Matti Honkanen. This policy explains how the app handles data.</p>
+    <p>
+      Valokuvaskanneri is an Android app for scanning printed photos with the phone camera.
+      The developer is Jari-Matti Honkanen. This policy explains how the app handles data.
+    </p>
 
-<h3>In short</h3>
-<p><strong>The app does not collect, transmit or share any data.</strong> All photos and settings stay on your device.</p>
+    <h2>In short</h2>
+    <div class="highlight">
+      <strong>The app does not collect, transmit or share any data.</strong> All photos and settings stay on your device.
+    </div>
 
-<h3>What the app handles</h3>
-<ul>
-  <li><strong>Camera:</strong> the app asks for camera permission so you can photograph printed photos. Images are not sent anywhere.</li>
-  <li><strong>Scanned photos and albums:</strong> photos, their thumbnails and album information are stored in the app's private storage on your device. You can delete them in the app or by uninstalling it.</li>
-  <li><strong>Settings:</strong> theme, accent colour and other preferences are stored on your device.</li>
-  <li><strong>Export:</strong> when you export or share photos, for example to your phone's gallery, they go where you choose. The app itself does not upload them.</li>
-</ul>
+    <h2>What the app handles</h2>
+    <div class="highlight">
+      <ul>
+        <li><strong>Camera:</strong> the app asks for camera permission so you can photograph printed photos. Images are not sent anywhere.</li>
+        <li><strong>Scanned photos and albums:</strong> photos, their thumbnails and album information are stored in the app's private storage on your device. You can delete them in the app or by uninstalling it.</li>
+        <li><strong>Settings:</strong> theme, accent colour and other preferences are stored on your device.</li>
+        <li><strong>Export:</strong> when you export or share photos, for example to your phone's gallery, they go where you choose. The app itself does not upload them.</li>
+      </ul>
+    </div>
 
-<h3>What the app does not do</h3>
-<ul>
-  <li>It does not collect personal data or usage analytics.</li>
-  <li>It does not show advertising.</li>
-  <li>It does not use user accounts.</li>
-  <li>It does not send data to servers or to third parties.</li>
-</ul>
+    <h2>What the app does not do</h2>
+    <div class="highlight">
+      <ul>
+        <li>It does not collect personal data or usage analytics.</li>
+        <li>It does not show advertising.</li>
+        <li>It does not use user accounts.</li>
+        <li>It does not send data to servers or to third parties.</li>
+      </ul>
+    </div>
 
-<h3>Children</h3>
-<p>The app does not knowingly collect information from anyone, including children.</p>
+    <h2>Children</h2>
+    <div class="highlight">
+      The app does not knowingly collect information from anyone, including children.
+    </div>
 
-<h3>Changes</h3>
-<p>If this policy changes, the new version will be published on this page and the update date will be changed.</p>
+    <h2>Changes</h2>
+    <div class="highlight">
+      If this policy changes, the new version will be published on this page and the update date will be changed.
+    </div>
 
-<h3>Contact</h3>
-<p>Questions about this policy: jmhonkanen@outlook.com</p>
+    <h2>Contact</h2>
+    <div class="highlight">
+      Questions about this policy: <a href="mailto:jmhonkanen@outlook.com">jmhonkanen@outlook.com</a>
+    </div>
 
-<footer>© 2026 Jari-Matti Honkanen</footer>
-</main>
+    <footer>
+      © 2026 Jari-Matti Honkanen
+    </footer>
+  </div>
 </body>
 </html>
