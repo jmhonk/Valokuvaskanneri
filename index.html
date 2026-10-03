@@ -1,86 +1,250 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Valokuvaskanneri</title>
-<meta name="description" content="Scan printed photos with your phone camera: automatic edge detection, perspective correction and albums.">
-<link rel="icon" href="icon.png">
-<style>
-  :root { --bg:#ffffff; --fg:#17262a; --muted:#52666b; --card:#f1f9fa; --accent:#006874; --line:#d5e6e9; --btn:#006874; --btnfg:#ffffff; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0e1517; --fg:#e4f1f3; --muted:#9db4b9; --card:#162327; --accent:#4fd8eb; --line:#26393e; --btn:#4fd8eb; --btnfg:#00363d; } }
-  * { box-sizing: border-box; }
-  body { margin:0; font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.6; background:var(--bg); color:var(--fg); }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-  a { color: var(--accent); }
-  h1 { font-size: 2.2rem; margin: 0 0 4px; }
-  h2 { margin-top: 2.2em; }
-  h3 { margin-top: 1.6em; }
-  .hero { display:flex; gap:20px; align-items:center; flex-wrap:wrap; margin-bottom: 8px; }
-  .hero img { width: 96px; height: 96px; border-radius: 22px; }
-  .tag { color: var(--muted); font-size: 1.1rem; margin: 0; }
-  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding:0; list-style:none; }
-  .grid li { background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
-  .badge { display:inline-block; background:var(--btn); color:var(--btnfg); padding: 10px 18px; border-radius: 999px; font-weight:600; text-decoration:none; }
-  .note { color: var(--muted); font-size:.95rem; }
-  .start { text-align: center; margin: 36px 0 8px; }
-  .start h2 { color: var(--accent); margin: 0 0 18px; font-size: 1.6rem; }
-  .start-btn { display: block; width: 100%; max-width: 440px; margin: 12px auto 0; padding: 16px 20px;
-               border-radius: 12px; font-weight: 700; font-size: 1.05rem; text-decoration: none; text-align: center; }
-  .start-btn.secondary { background: var(--card); color: var(--fg); border: 1px solid var(--line); }
-  .start-btn.primary { background: var(--btn); color: var(--btnfg); border: 1px solid var(--btn); }
-  .start-btn:hover { filter: brightness(1.12); }
-  .start .note { max-width: 440px; margin: 16px auto 0; }
-  nav { margin-bottom: 24px; }
-  footer { margin-top: 3em; padding-top: 16px; border-top:1px solid var(--line); color: var(--muted); font-size:.95rem; }
-</style>
-</head>
-<body>
-<main>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valokuvaskanneri</title>
+  <meta name="description" content="Scan printed photos with your phone camera: automatic edge detection, perspective correction and albums.">
+  <link rel="icon" href="icon.png">
 
-<div class="hero">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b1220;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 80px 20px 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #00838f, #0b1220);
+    }
+
+    header img {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    header h1 {
+      font-size: 52px;
+      margin: 16px 0 0;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 20px auto 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    h2 {
+      color: #4fd8eb;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .card > p {
+      color: #cbd5e1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .grid li {
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: #cbd5e1;
+    }
+
+    .grid li strong {
+      color: #9be9f3;
+    }
+
+    .cta {
+      text-align: center;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 10px auto;
+      padding: 14px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      box-sizing: border-box;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #00838f;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #006874;
+    }
+
+    .btn-secondary {
+      background: #1f2937;
+      color: #e5e7eb;
+      border: 1px solid #374151;
+    }
+
+    .btn-secondary:hover {
+      background: #273449;
+    }
+
+    .note {
+      margin-top: 15px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #4fd8eb;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 60px 20px 30px;
+      }
+
+      header h1 {
+        font-size: 36px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
   <img src="icon.png" alt="Valokuvaskanneri app icon">
-  <div>
-    <h1>Valokuvaskanneri</h1>
-    <p class="tag">Skannaa vanhat paperivalokuvat puhelimen kameralla.<br>Scan printed photos with your phone camera.</p>
+  <h1>Valokuvaskanneri</h1>
+  <p>
+    Skannaa vanhat paperivalokuvat puhelimen kameralla.<br>
+    Scan printed photos with your phone camera.
+  </p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Aloita käyttö</h2>
+
+    <div class="cta">
+      <a class="btn btn-secondary"
+         href="https://groups.google.com/g/valokuvaskanneri-closed-beta"
+         target="_blank" rel="noopener">
+        1. Liity beta-testaajaksi
+      </a>
+
+      <a class="btn btn-primary"
+         href="https://play.google.com/store/apps/details?id=fi.jmhonkanen.valokuvaskanneri"
+         target="_blank" rel="noopener">
+        2. Lataa Play Storesta
+      </a>
+      <p class="note">
+        Huom: Sovellus näkyy ladattavana vasta beta-jäsenyyden hyväksynnän jälkeen.<br>
+        Saatavilla vain Android-laitteilla.
+      </p>
+    </div>
   </div>
+
+  <div class="card">
+    <h2>Suomeksi</h2>
+    <p>
+      Valokuvaskanneri muuttaa paperivalokuvat digitaalisiksi kuviksi. Ota kuva valokuvasta, ja sovellus tunnistaa reunat,
+      oikaisee perspektiivin ja siistii kuvan. Kaikki tapahtuu puhelimessasi: sovellus ei lähetä kuviasi minnekään,
+      ei kerää tietoja eikä näytä mainoksia. Sovellus toimii suomeksi ja englanniksi.
+    </p>
+    <ul class="grid">
+      <li><strong>Reunantunnistus</strong><br>Automaattinen, ja kulmia voi säätää käsin.</li>
+      <li><strong>Perspektiivin oikaisu</strong><br>Kuva on suorakulmainen, vaikka kuvaisit vinosta.</li>
+      <li><strong>Suodattimet</strong><br>Automaattinen parannus ja valittavat suodattimet.</li>
+      <li><strong>Albumit</strong><br>Järjestä skannatut kuvat albumeihin.</li>
+      <li><strong>Nopea skannaus</strong><br>Ota monta kuvaa peräkkäin, käsittely tapahtuu taustalla.</li>
+      <li><strong>JPEG-vienti</strong><br>Valittava laatu ja jako suoraan galleriaan.</li>
+    </ul>
+  </div>
+
+  <div class="card" lang="en">
+    <h2>In English</h2>
+    <p>
+      Valokuvaskanneri turns printed photos into digital images. Take a picture of a print and the app detects the edges,
+      corrects the perspective and cleans up the result. Everything happens on your phone: the app does not upload your photos,
+      collect data or show ads. The app is available in Finnish and English.
+    </p>
+    <ul class="grid">
+      <li><strong>Edge detection</strong><br>Automatic, with manual corner adjustment.</li>
+      <li><strong>Perspective correction</strong><br>Photos come out rectangular even when shot at an angle.</li>
+      <li><strong>Filters</strong><br>Automatic enhancement and selectable filters.</li>
+      <li><strong>Albums</strong><br>Organise scanned photos into albums.</li>
+      <li><strong>Fast batch scanning</strong><br>Shoot many photos in a row; processing happens in the background.</li>
+      <li><strong>JPEG export</strong><br>Adjustable quality and sharing straight to the gallery.</li>
+    </ul>
+  </div>
+
 </div>
 
-<section class="start">
-  <h2>Aloita käyttö</h2>
-  <!-- 1. Closed beta -ryhmä -->
-  <a class="start-btn secondary" href="https://groups.google.com/g/valokuvaskanneri-closed-beta" target="_blank" rel="noopener">1. Liity beta-testaajaksi</a>
-  <!-- 2. Play Store -linkki -->
-  <a class="start-btn primary" href="https://play.google.com/store/apps/details?id=fi.jmhonkanen.valokuvaskanneri" target="_blank" rel="noopener">2. Lataa Play Storesta</a>
-  <p class="note">Huom: Sovellus näkyy ladattavana vasta beta-jäsenyyden hyväksynnän jälkeen.<br>Saatavilla vain Android-laitteilla.</p>
-</section>
-
-<h2>Suomeksi</h2>
-<p>Valokuvaskanneri muuttaa paperivalokuvat digitaalisiksi kuviksi. Ota kuva valokuvasta, ja sovellus tunnistaa reunat, oikaisee perspektiivin ja siistii kuvan. Kaikki tapahtuu puhelimessasi: sovellus ei lähetä kuviasi minnekään, ei kerää tietoja eikä näytä mainoksia. Sovellus toimii suomeksi ja englanniksi.</p>
-<ul class="grid">
-  <li><strong>Reunantunnistus</strong><br>Automaattinen, ja kulmia voi säätää käsin.</li>
-  <li><strong>Perspektiivin oikaisu</strong><br>Kuva on suorakulmainen, vaikka kuvaisit vinosta.</li>
-  <li><strong>Suodattimet</strong><br>Automaattinen parannus ja valittavat suodattimet.</li>
-  <li><strong>Albumit</strong><br>Järjestä skannatut kuvat albumeihin.</li>
-  <li><strong>Nopea skannaus</strong><br>Ota monta kuvaa peräkkäin, käsittely tapahtuu taustalla.</li>
-  <li><strong>JPEG-vienti</strong><br>Valittava laatu ja jako suoraan galleriaan.</li>
-</ul>
-
-<h2>In English</h2>
-<p>Valokuvaskanneri turns printed photos into digital images. Take a picture of a print and the app detects the edges, corrects the perspective and cleans up the result. Everything happens on your phone: the app does not upload your photos, collect data or show ads. The app is available in Finnish and English.</p>
-<ul class="grid">
-  <li><strong>Edge detection</strong><br>Automatic, with manual corner adjustment.</li>
-  <li><strong>Perspective correction</strong><br>Photos come out rectangular even when shot at an angle.</li>
-  <li><strong>Filters</strong><br>Automatic enhancement and selectable filters.</li>
-  <li><strong>Albums</strong><br>Organise scanned photos into albums.</li>
-  <li><strong>Fast batch scanning</strong><br>Shoot many photos in a row; processing happens in the background.</li>
-  <li><strong>JPEG export</strong><br>Adjustable quality and sharing straight to the gallery.</li>
-</ul>
-
 <footer>
-  <a href="privacy.html">Privacy Policy</a> · Contact: <a href="mailto:jmhonkanen@outlook.com">jmhonkanen@outlook.com</a><br>
-  © 2026 Jari-Matti Honkanen
+  © 2026 Jari-Matti Honkanen •
+  <a href="privacy.html">Privacy Policy</a> •
+  Contact: <a href="mailto:jmhonkanen@outlook.com">jmhonkanen@outlook.com</a>
 </footer>
-</main>
+
 </body>
 </html>
