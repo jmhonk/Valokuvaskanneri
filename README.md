@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon.png" alt="Valokuvaskanneri icon" width="120">
+  <img src="valokuvaskanneri_icon.png" alt="Valokuvaskanneri icon" width="120">
 </p>
 
 # Valokuvaskanneri
