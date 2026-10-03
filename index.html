@@ -5,166 +5,218 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Valokuvaskanneri</title>
   <meta name="description" content="Scan printed photos with your phone camera: automatic edge detection, perspective correction and albums.">
+  <meta name="theme-color" content="#091a1d">
   <link rel="icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg: #091a1d;
+      --ink: #e2f4f6;
+      --muted: #8fb0b6;
+      --deep: #0c2a2f;
+      --teal: #2bcbe0;
+      --cyan: #2bcbe0;
+      --pale: #e6fafd;
+      --white: #0f2529;
+      --surface-2: #163a40;
+      --line: #22444a;
+      --on-cyan: #032a30;
     }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b1220;
-      color: #e5e7eb;
+      font-family: "Figtree", system-ui, sans-serif;
+      font-size: 17px;
       line-height: 1.6;
+      background: var(--bg);
+      color: var(--ink);
     }
 
+    a { color: var(--teal); }
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* ---------- Hero ---------- */
     header {
-      padding: 80px 20px 40px;
-      text-align: center;
-      background: linear-gradient(135deg, #00838f, #0b1220);
+      background:
+        radial-gradient(700px 360px at 85% 10%, rgba(43, 203, 224, .14), transparent 70%),
+        linear-gradient(180deg, var(--deep) 0%, var(--bg) 100%);
+      color: var(--pale);
+      border-bottom: 1px solid var(--line);
+      padding: 56px 0 64px;
+      overflow: hidden;
     }
 
-    header img {
-      width: 96px;
-      height: 96px;
-      border-radius: 22px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    .hero {
+      display: grid;
+      gap: 48px;
+      align-items: center;
     }
 
-    header h1 {
-      font-size: 52px;
-      margin: 16px 0 0;
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      display: block;
+      margin-bottom: 22px;
     }
 
-    header p {
-      font-size: 18px;
-      color: #cbd5e1;
-      max-width: 700px;
-      margin: 20px auto 0;
+    h1 {
+      font-family: "Young Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(40px, 7.5vw, 72px);
+      line-height: 1.02;
+      margin: 0;
+      overflow-wrap: anywhere;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
+    .lead {
+      font-size: 20px;
+      line-height: 1.5;
+      margin: 20px 0 0;
+      max-width: 34ch;
     }
 
-    .card {
-      background: #111827;
-      padding: 25px;
-      margin: 20px 0;
-      border-radius: 14px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    .lead span { display: block; color: var(--muted); font-size: 17px; margin-top: 6px; }
+
+    .facts {
+      list-style: none;
+      margin: 28px 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .facts li {
+      border: 1px solid var(--line);
+      background: rgba(43, 203, 224, .08);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 15px;
+    }
+
+    .facts li::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      margin-right: 8px;
+      vertical-align: 1px;
+    }
+
+    /* ---------- Start ---------- */
+    .start {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      padding: 36px 0;
+    }
+
+    .start-inner {
+      display: grid;
+      gap: 20px;
+      align-items: center;
     }
 
     h2 {
-      color: #4fd8eb;
-      margin-top: 0;
-      text-align: center;
+      font-family: "Young Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: 34px;
+      line-height: 1.1;
+      margin: 0;
+      color: var(--cyan);
     }
 
-    .card > p {
-      color: #cbd5e1;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin: 20px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .grid li {
-      background: #1f2937;
-      border: 1px solid #374151;
-      border-radius: 12px;
-      padding: 14px 16px;
-      color: #cbd5e1;
-    }
-
-    .grid li strong {
-      color: #9be9f3;
-    }
-
-    .cta {
-      text-align: center;
-    }
+    .steps { display: grid; gap: 12px; }
 
     .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+      border: 2px solid var(--teal);
+    }
+
+    .btn .n {
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 16px;
+      flex: none;
+    }
+
+    .btn-secondary { background: transparent; color: var(--cyan); }
+    .btn-secondary .n { background: var(--surface-2); color: var(--cyan); }
+    .btn-secondary:hover { background: var(--surface-2); }
+
+    .btn-primary { background: var(--cyan); color: var(--on-cyan); }
+    .btn-primary .n { background: var(--on-cyan); color: var(--cyan); }
+    .btn-primary:hover { background: #63dbeb; border-color: #63dbeb; }
+
+    .note { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+
+    /* ---------- Languages ---------- */
+    main.wrap { padding-top: 56px; padding-bottom: 24px; }
+
+    .langs {
+      display: grid;
+      gap: 48px;
+    }
+
+    .lang h2 { margin-bottom: 14px; }
+
+    .lang > p { margin: 0 0 22px; max-width: 62ch; }
+
+    .features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .features li {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .features strong {
       display: block;
-      width: 100%;
-      max-width: 400px;
-      margin: 10px auto;
-      padding: 14px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      text-align: center;
-      box-sizing: border-box;
-      transition: 0.2s ease;
+      color: var(--ink);
+      font-size: 17px;
+      margin-bottom: 2px;
     }
 
-    .btn-primary {
-      background: #00838f;
-      color: white;
+    footer.wrap {
+      padding-top: 32px; padding-bottom: 48px;
+      color: var(--muted);
+      font-size: 15px;
     }
 
-    .btn-primary:hover {
-      background: #006874;
-    }
-
-    .btn-secondary {
-      background: #1f2937;
-      color: #e5e7eb;
-      border: 1px solid #374151;
-    }
-
-    .btn-secondary:hover {
-      background: #273449;
-    }
-
-    .note {
-      margin-top: 15px;
-      color: #94a3b8;
-      font-size: 14px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #9ca3af;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #4fd8eb;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 60px 20px 30px;
-      }
-
-      header h1 {
-        font-size: 36px;
-      }
-
-      header p {
-        font-size: 16px;
-      }
-
-      .card {
-        padding: 20px;
-      }
+    @media (min-width: 860px) {
+      .start-inner { grid-template-columns: 1fr 1.4fr; }
+      .langs { grid-template-columns: 1fr 1fr; gap: 56px; }
+      .features { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -172,30 +224,33 @@
 <body>
 
 <header>
-  <img src="icon.png" alt="Valokuvaskanneri app icon">
-  <h1>Valokuvaskanneri</h1>
-  <p>
-    Skannaa vanhat paperivalokuvat puhelimen kameralla.<br>
-    Scan printed photos with your phone camera.
-  </p>
+  <div class="wrap hero">
+    <div>
+      <img class="app-icon" src="icon.png" alt="Valokuvaskanneri app icon" width="72" height="72">
+      <h1>Valokuvaskanneri</h1>
+      <p class="lead">
+        Skannaa vanhat paperivalokuvat puhelimen kameralla.
+        <span lang="en">Scan printed photos with your phone camera.</span>
+      </p>
+      <ul class="facts">
+        <li>Kaikki tapahtuu puhelimessasi</li>
+        <li>Ei tiedonkeruuta</li>
+        <li>Ei mainoksia</li>
+        <li>Suomi &amp; English</li>
+      </ul>
+    </div>
+  </div>
 </header>
 
-<div class="container">
-
-  <div class="card">
+<section class="start">
+  <div class="wrap start-inner">
     <h2>Aloita käyttö</h2>
-
-    <div class="cta">
-      <a class="btn btn-secondary"
-         href="https://groups.google.com/g/valokuvaskanneri-closed-beta"
-         target="_blank" rel="noopener">
-        1. Liity beta-testaajaksi
+    <div class="steps">
+      <a class="btn btn-secondary" href="https://groups.google.com/g/valokuvaskanneri-closed-beta" target="_blank" rel="noopener">
+        <span class="n">1</span> Liity beta-testaajaksi
       </a>
-
-      <a class="btn btn-primary"
-         href="https://play.google.com/store/apps/details?id=fi.jmhonkanen.valokuvaskanneri"
-         target="_blank" rel="noopener">
-        2. Lataa Play Storesta
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=fi.jmhonkanen.valokuvaskanneri" target="_blank" rel="noopener">
+        <span class="n">2</span> Lataa Play Storesta
       </a>
       <p class="note">
         Huom: Sovellus näkyy ladattavana vasta beta-jäsenyyden hyväksynnän jälkeen.<br>
@@ -203,44 +258,41 @@
       </p>
     </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2>Suomeksi</h2>
-    <p>
-      Valokuvaskanneri muuttaa paperivalokuvat digitaalisiksi kuviksi. Ota kuva valokuvasta, ja sovellus tunnistaa reunat,
-      oikaisee perspektiivin ja siistii kuvan. Kaikki tapahtuu puhelimessasi: sovellus ei lähetä kuviasi minnekään,
-      ei kerää tietoja eikä näytä mainoksia. Sovellus toimii suomeksi ja englanniksi.
-    </p>
-    <ul class="grid">
-      <li><strong>Reunantunnistus</strong><br>Automaattinen, ja kulmia voi säätää käsin.</li>
-      <li><strong>Perspektiivin oikaisu</strong><br>Kuva on suorakulmainen, vaikka kuvaisit vinosta.</li>
-      <li><strong>Suodattimet</strong><br>Automaattinen parannus ja valittavat suodattimet.</li>
-      <li><strong>Albumit</strong><br>Järjestä skannatut kuvat albumeihin.</li>
-      <li><strong>Nopea skannaus</strong><br>Ota monta kuvaa peräkkäin, käsittely tapahtuu taustalla.</li>
-      <li><strong>JPEG-vienti</strong><br>Valittava laatu ja jako suoraan galleriaan.</li>
-    </ul>
+<main class="wrap">
+  <div class="langs">
+
+    <section class="lang">
+      <h2>Suomeksi</h2>
+      <p>Valokuvaskanneri muuttaa paperivalokuvat digitaalisiksi kuviksi. Ota kuva valokuvasta, ja sovellus tunnistaa reunat, oikaisee perspektiivin ja siistii kuvan. Kaikki tapahtuu puhelimessasi: sovellus ei lähetä kuviasi minnekään, ei kerää tietoja eikä näytä mainoksia. Sovellus toimii suomeksi ja englanniksi.</p>
+      <ul class="features">
+        <li><strong>Reunantunnistus</strong>Automaattinen, ja kulmia voi säätää käsin.</li>
+        <li><strong>Perspektiivin oikaisu</strong>Kuva on suorakulmainen, vaikka kuvaisit vinosta.</li>
+        <li><strong>Suodattimet</strong>Automaattinen parannus ja valittavat suodattimet.</li>
+        <li><strong>Albumit</strong>Järjestä skannatut kuvat albumeihin.</li>
+        <li><strong>Nopea skannaus</strong>Ota monta kuvaa peräkkäin, käsittely tapahtuu taustalla.</li>
+        <li><strong>JPEG-vienti</strong>Valittava laatu ja jako suoraan galleriaan.</li>
+      </ul>
+    </section>
+
+    <section class="lang" lang="en">
+      <h2>In English</h2>
+      <p>Valokuvaskanneri turns printed photos into digital images. Take a picture of a print and the app detects the edges, corrects the perspective and cleans up the result. Everything happens on your phone: the app does not upload your photos, collect data or show ads. The app is available in Finnish and English.</p>
+      <ul class="features">
+        <li><strong>Edge detection</strong>Automatic, with manual corner adjustment.</li>
+        <li><strong>Perspective correction</strong>Photos come out rectangular even when shot at an angle.</li>
+        <li><strong>Filters</strong>Automatic enhancement and selectable filters.</li>
+        <li><strong>Albums</strong>Organise scanned photos into albums.</li>
+        <li><strong>Fast batch scanning</strong>Shoot many photos in a row; processing happens in the background.</li>
+        <li><strong>JPEG export</strong>Adjustable quality and sharing straight to the gallery.</li>
+      </ul>
+    </section>
+
   </div>
+</main>
 
-  <div class="card" lang="en">
-    <h2>In English</h2>
-    <p>
-      Valokuvaskanneri turns printed photos into digital images. Take a picture of a print and the app detects the edges,
-      corrects the perspective and cleans up the result. Everything happens on your phone: the app does not upload your photos,
-      collect data or show ads. The app is available in Finnish and English.
-    </p>
-    <ul class="grid">
-      <li><strong>Edge detection</strong><br>Automatic, with manual corner adjustment.</li>
-      <li><strong>Perspective correction</strong><br>Photos come out rectangular even when shot at an angle.</li>
-      <li><strong>Filters</strong><br>Automatic enhancement and selectable filters.</li>
-      <li><strong>Albums</strong><br>Organise scanned photos into albums.</li>
-      <li><strong>Fast batch scanning</strong><br>Shoot many photos in a row; processing happens in the background.</li>
-      <li><strong>JPEG export</strong><br>Adjustable quality and sharing straight to the gallery.</li>
-    </ul>
-  </div>
-
-</div>
-
-<footer>
+<footer class="wrap">
   © 2026 Jari-Matti Honkanen •
   <a href="privacy.html">Privacy Policy</a> •
   Contact: <a href="mailto:jmhonkanen@outlook.com">jmhonkanen@outlook.com</a>
