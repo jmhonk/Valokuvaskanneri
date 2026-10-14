@@ -34,6 +34,6 @@ Requires Android 8.0 (API 26) or newer.
 
 ## Contact
 
-Jari-Matti Honkanen – jmhonkanen@outlook.com
+Jari-Matti Honkanen – honkanen_dev@proton.me
 
 © 2026 Jari-Matti Honkanen. All rights reserved.
